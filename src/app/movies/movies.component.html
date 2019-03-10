@@ -1,0 +1,35 @@
+<div class="panel panel-primary">
+  <div class="panel-heading">{{pageTitle}}</div>
+  <div class="panel-body">
+    <div>
+      <input [(ngModel)]="filterBy" type="text" class="form-control" placeholder="filter-movies"/>
+    </div>
+      <table *ngIf="movies && movies.length" class="table table-bordered table-hover">
+          <tr>
+            
+            <th>title</th>
+            <th>year</th>
+            <th>rating</th>
+            <th>review</th>
+            <th>genre</th>
+            <th>country</th>
+            <th>copies</th>
+          </tr>
+          <tr *ngFor="let movie of movies| movies:filterBy">
+            <td>{{movie.title}}</td>
+            <td>{{movie.year}}</td>
+            <td>{{movie.rating}}</td>
+            <td>{{movie.review}}</td>
+            <td>{{movie.genre}}</td>
+            <td>{{movie.country}}</td>
+            <td>{{movie.copies}}</td>
+            </tr>
+         
+          </table>
+  </div>
+
+</div>
+
+
+
+
